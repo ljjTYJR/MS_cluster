@@ -13,7 +13,15 @@ $$
 
 So, with the point of format $p = \left[\begin{matrix} x\\y \end{matrix}\right]$ , we can easily compute the norm of $p$
 
-The code is in the file `MS_Convert.py`
+The code is in the file `MS_Convert.py`.
+
+
+
+In the process of dealing with the data, there are some questions:
+
+1. the efficency is low, too much data need to be processed;
+2. the parameters (band_width, the threhold) have effects on the result, then how to judge the result?
+3. how to choose a kernel function?
 
 ## Solution2 : 
 

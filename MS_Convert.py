@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 class MS_Convert(object):
     def __init__(self, data_path):
         self.data_path = data_path
-        self.dis_threshold = 0.0000001
+        # dis_threshold = 0.0000000000001
 
     # get the all original data
     def get_original_data(self):
@@ -31,25 +31,24 @@ class MS_Convert(object):
         return original_data
 
     #  convert the data of (theta, r) to (x,y)
-    def get_processed_data(self):
-        original_data = self.get_original_data()
+    def get_processed_data(self, original_data):
         processed_data = []
         for data in original_data:
             theta = data[0]
             r = data[1]
             processed_data.append([r * math.cos(theta), r * math.sin(theta)])
-        processed_data = np.array(processed_data)
         print("get processed data")
         return processed_data
 
     # cal the kernel by difference of point and set
     def kernel(self, point_diff, band_width):
-        """
-        the weight is computed by kernel function
-        e^{- sqrt((xi - x) / h) ^ 2}
-        """
         # TODO:是否需要带系数？
-        weights = (1/(band_width*math.sqrt(2*math.pi))) * np.exp(-0.5 * np.sqrt((((point_diff / band_width)**2).sum(axis=1))))
+        # weights = (1/(band_width*math.sqrt(2*math.pi))) * np.exp(-0.5 * np.sqrt((((point_diff / band_width)**2).sum(axis=1))))
+        weights = []
+        for diff in point_diff:
+            norm = ((diff[0] ** 2) + (diff[1] ** 2)) / (band_width ** 2)
+            density_estimation = (1 / (band_width * math.sqrt(2 * math.pi))) * math.exp(-0.5 * norm)
+            weights.append(density_estimation)
         return weights
 
     def cal_dist(self, pointA, pointB):
@@ -57,11 +56,11 @@ class MS_Convert(object):
         for i in range(len(pointA)):
             diff = pointA[i] - pointB[i]
             res += diff ** 2
-        return np.sqrt(res)
+        return math.sqrt(res)
 
     def shift_point(self, p_old, points, band_width):
         diff = p_old - points
-        weights = self.kernel(diff, band_width)
+        weights = np.array(self.kernel(diff, band_width))
         p_new_x = float(0)
         p_new_y = float(0)
         i = 0
@@ -80,17 +79,21 @@ class MS_Convert(object):
         @points:the raw processed point data
         @bandwith:the bandwith of
     """
-    def clustering(self, points, band_with):
+    def clustering(self, points, band_with, dis_threshold):
+        # creating the shifting points to record next point after iteration
+        shifting_points = np.array(points)
+        points = np.array(points)
+
         # initialize a max_distance greater than threshold
-        max_distance = self.dis_threshold + 1
+        max_distance = dis_threshold + 1
         # flag to reveal whether the point need to iterate
         end_flag = [False] * points.shape[0]
-        # initialize an iteratoring array
-        shifting_points = points
+        # record the iteratoring time
         iteration_times = 0
 
-        while max_distance > self.dis_threshold:
+        while max_distance > dis_threshold:
             iteration_times += 1
+            print("iteration times =", iteration_times, ",", "max_distance=", max_distance)
             # update the points in shifting_points sumptuously
             for i in range(len(points)):
                 max_distance = 0
@@ -101,32 +104,60 @@ class MS_Convert(object):
                 # get the new point after one iteration
                 p_new = self.shift_point(p_old, points, band_with)
                 old_new_dist = self.cal_dist(p_new, p_old)
-                print("dis=", old_new_dist)
                 # cal the distance of old point and new point, compare it with threshold
                 # get the max distance in the shifting points
                 if old_new_dist > max_distance:
                     max_distance = old_new_dist
 
-                if old_new_dist < self.dis_threshold:
+                if old_new_dist < dis_threshold:
                     end_flag[i] = True
                 shifting_points[i] = p_new
-        print("iteration times = ", iteration_times)
         return shifting_points
 
 
 if __name__ == '__main__' :
+
     MS = MS_Convert(data_path='original_data/')
-    data = MS.get_processed_data()
-    res_points = MS.clustering(data, band_with=1)
-    print(res_points)
-    x = res_points[:,0]
-    y = res_points[:,1]
+    # read original data
+    original_data = MS.get_original_data()
+    if os.path.exists('original_data.csv'):
+        os.remove('original_data.csv')
+    np.savetxt("original_data.csv", original_data, delimiter=',')
+
+    # convert (angle,r) -> (x,y)
+    processed_data = MS.get_processed_data(original_data)
+    if os.path.exists('processed_data.csv'):
+        os.remove('processed_data.csv')
+    np.savetxt("processed_data.csv", processed_data, delimiter=',')
+
+    center_points = MS.clustering(processed_data, band_with=3, dis_threshold=0.00001)
+    if os.path.exists('res_data.csv'):
+        os.remove('res_data.csv')
+    np.savetxt("res_data.csv", center_points, delimiter=',')
+
+    # plot the points
     fig = plt.figure()
-    ax = fig.add_subplot(111)
-    scatter = ax.scatter(x,y)
-    ax.set_xlabel('x')
-    ax.set_ylabel('y')
-    plt.colorbar(scatter)
-    fig.savefig("aaa")
+
+    processed_data = np.array(processed_data)
+    p_ori_x = processed_data[:,0]
+    p_ori_y = processed_data[:,1]
+    picture_original = fig.add_subplot(211)
+    scatter_original = picture_original.scatter(p_ori_x,p_ori_y,s=5,c='b')
+    picture_original.set_xlabel('x')
+    picture_original.set_ylabel('y')
+    plt.colorbar(scatter_original)
+
+    # plot center point
+    p_cen_x = center_points[:,0]
+    p_cen_y = center_points[:,1]
+    picture_center = fig.add_subplot(212)
+    scatter_center = picture_center.scatter(p_cen_x,p_cen_y,s=5,c='r')
+    picture_center.set_xlabel('x')
+    picture_center.set_ylabel('y')
+    plt.colorbar(scatter_center)
+
+    # save the plot
+    fig.savefig("original")
+
 
 
