@@ -130,7 +130,7 @@ if __name__ == '__main__' :
         os.remove('processed_data.csv')
     np.savetxt("processed_data.csv", processed_data, delimiter=',')
 
-    center_points = MS.clustering(processed_data, band_with=3, dis_threshold=0.00001)
+    center_points = MS.clustering(processed_data, band_with=1, dis_threshold=0.00001)
     if os.path.exists('res_data.csv'):
         os.remove('res_data.csv')
     np.savetxt("res_data.csv", center_points, delimiter=',')
@@ -139,25 +139,22 @@ if __name__ == '__main__' :
     fig = plt.figure()
 
     processed_data = np.array(processed_data)
+    picture = fig.add_subplot(111)
     p_ori_x = processed_data[:,0]
     p_ori_y = processed_data[:,1]
-    picture_original = fig.add_subplot(211)
-    scatter_original = picture_original.scatter(p_ori_x,p_ori_y,s=5,c='b')
-    picture_original.set_xlabel('x')
-    picture_original.set_ylabel('y')
-    plt.colorbar(scatter_original)
+    scatter_original = picture.scatter(p_ori_x,p_ori_y,s=5,c='b')
 
-    # plot center point
     p_cen_x = center_points[:,0]
     p_cen_y = center_points[:,1]
-    picture_center = fig.add_subplot(212)
-    scatter_center = picture_center.scatter(p_cen_x,p_cen_y,s=5,c='r')
-    picture_center.set_xlabel('x')
-    picture_center.set_ylabel('y')
+    scatter_center = picture.scatter(p_cen_x,p_cen_y,s=10,c='r')
+
+    picture.set_xlabel('x')
+    picture.set_ylabel('y')
+    plt.colorbar(scatter_original)
     plt.colorbar(scatter_center)
 
     # save the plot
-    fig.savefig("original")
+    fig.savefig("res_plt")
 
 
 
