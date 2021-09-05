@@ -117,7 +117,7 @@ class MS_Convert(object):
 
 if __name__ == '__main__' :
 
-    MS = MS_Convert(data_path='original_data/')
+    MS = MS_Convert(data_path='../original_data/')
     # read original data
     original_data = MS.get_original_data()
     if os.path.exists('original_data.csv'):
