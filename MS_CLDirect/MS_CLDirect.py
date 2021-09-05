@@ -1,8 +1,7 @@
 """
-basic idea :
-Since linear data can be dealt easily, can the original data be converted to linear data?
-The theta is the angle, and r is the radius
+MS(Mean Shift) algorithm to be employed directly on the raw data with (theta, r)
 """
+
 import shutil
 from sys import path
 import numpy as np
@@ -11,12 +10,12 @@ import os
 import math
 import matplotlib.pyplot as plt
 
-class MS_Convert(object):
+# The class for the algorithm for MeanShift Algo
+class MS_Direct(object):
     def __init__(self, data_path):
         self.data_path = data_path
-        # dis_threshold = 0.0000000000001
 
-    # get the all original data
+    # read the data from the dir of `../original_data` and return
     def get_original_data(self):
         if os.path.exists('Combine.csv') :
             os.remove('Combine.csv')
@@ -30,54 +29,47 @@ class MS_Convert(object):
         print("get original data")
         return original_data
 
-    #  convert the data of (theta, r) to (x,y)
-    def get_processed_data(self, original_data):
-        processed_data = []
-        for data in original_data:
-            theta = data[0]
-            r = data[1]
-            processed_data.append([r * math.cos(theta), r * math.sin(theta)])
-        print("get processed data")
-        return processed_data
-
-    # cal the kernel by difference of point and set
-    def kernel(self, point_diff, band_width):
-        # weights = (1/(band_width*math.sqrt(2*math.pi))) * np.exp(-0.5 * np.sqrt((((point_diff / band_width)**2).sum(axis=1))))
+    # Use the kernel function to compute the weight of the point set, return the weights
+    # @point : the point to iterate
+    # @points : the sampling set
+    # @band_width : ~
+    def kernel(self, point, points, band_width):
         weights = []
-        for diff in point_diff:
-            norm = ((diff[0] ** 2) + (diff[1] ** 2)) / (band_width ** 2)
+        for p_tmp in points:
+            diff_tmp = self.cal_dist(point, p_tmp)
+            norm = (diff_tmp ** 2) / (band_width ** 2)
             density_estimation = (1 / (band_width * math.sqrt(2 * math.pi))) * math.exp(-0.5 * norm)
             weights.append(density_estimation)
         return weights
 
+    # calcaulate the `distance` between two points
     def cal_dist(self, pointA, pointB):
-        res = float(0)
-        for i in range(len(pointA)):
-            diff = pointA[i] - pointB[i]
-            res += diff ** 2
-        return math.sqrt(res)
+        diff_theta = pointA[0] - pointB[0]
+        diff_r = pointA[1] - pointB[1]
+        # the distance should be in (0,pi)
+        if abs(diff_theta) > math.pi:
+            diff_theta = 2 * math.pi - abs(diff_theta)
+        distance = math.sqrt(diff_theta ** 2 + diff_r ** 2)
+        return distance
 
+    # Use the Mean Shift to generate the new point
     def shift_point(self, p_old, points, band_width):
-        diff = p_old - points
-        weights = np.array(self.kernel(diff, band_width))
+        weights = self.kernel(p_old, points, band_width)
         p_new_x = float(0)
         p_new_y = float(0)
         i = 0
-        weights_sum = float(0)
+        weights_num = float(0)
         for p_tmp in points:
-            # cal the numerator of MS
+            # iterate the new point
             p_new_x += p_tmp[0] * weights[i]
             p_new_y += p_tmp[1] * weights[i]
-            weights_sum += weights[i]
+            weights_num += weights[i]
             i = i + 1
-        p_new_x /= weights_sum
-        p_new_y /= weights_sum
+        p_new_x /= weights_num
+        p_new_y /= weights_num
         return [p_new_x, p_new_y]
-    """
-    cluster the processed data
-        @points:the raw processed point data
-        @bandwith:the bandwith of
-    """
+
+    # input the original points data, return the clustering points array
     def clustering(self, points, band_with, dis_threshold):
         # creating the shifting points to record next point after iteration
         shifting_points = np.array(points)
@@ -114,22 +106,20 @@ class MS_Convert(object):
         return shifting_points
 
 
-if __name__ == '__main__' :
 
-    MS = MS_Convert(data_path='../original_data/')
-    # read original data
+
+
+if __name__ == '__main__':
+    MS = MS_Direct(data_path='../original_data/')
+
+    # get the original data
     original_data = MS.get_original_data()
     if os.path.exists('original_data.csv'):
         os.remove('original_data.csv')
     np.savetxt("original_data.csv", original_data, delimiter=',')
 
-    # convert (angle,r) -> (x,y)
-    processed_data = MS.get_processed_data(original_data)
-    if os.path.exists('processed_data.csv'):
-        os.remove('processed_data.csv')
-    np.savetxt("processed_data.csv", processed_data, delimiter=',')
-
-    center_points = MS.clustering(processed_data, band_with=1, dis_threshold=0.00001)
+    # get the result after the clustering
+    center_points = MS.clustering(points=original_data, band_with=1, dis_threshold=0.00001)
     if os.path.exists('res_data.csv'):
         os.remove('res_data.csv')
     np.savetxt("res_data.csv", center_points, delimiter=',')
@@ -137,23 +127,20 @@ if __name__ == '__main__' :
     # plot the points
     fig = plt.figure()
 
-    processed_data = np.array(processed_data)
+    original_data = np.array(original_data)
     picture = fig.add_subplot(111)
-    p_ori_x = processed_data[:,0]
-    p_ori_y = processed_data[:,1]
+    p_ori_x = original_data[:,0]
+    p_ori_y = original_data[:,1]
     scatter_original = picture.scatter(p_ori_x,p_ori_y,s=5,c='b')
 
     p_cen_x = center_points[:,0]
     p_cen_y = center_points[:,1]
     scatter_center = picture.scatter(p_cen_x,p_cen_y,s=10,c='r')
 
-    picture.set_xlabel('x')
-    picture.set_ylabel('y')
+    picture.set_xlabel('theta')
+    picture.set_ylabel('r')
     plt.colorbar(scatter_original)
     plt.colorbar(scatter_center)
 
     # save the plot
     fig.savefig("res_plt")
-
-
-
