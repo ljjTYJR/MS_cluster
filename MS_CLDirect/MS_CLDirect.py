@@ -69,8 +69,20 @@ class MS_Direct(object):
         p_new_y /= weights_num
         return [p_new_x, p_new_y]
 
+    # compute the bandwidth by N
+    def compute_bandwidth(self, points):
+        N = len(points)
+        dis_arr = []
+        for p_tmp in points:
+            dis_arr.append(self.cal_dist(p_tmp, [0,0]))
+        # compute the standard standard deviation
+        data_std = np.std(np.array(dis_arr), ddof=1)
+        print("set bandwidth=",(1.05 * data_std) * (pow(N, -0.2)))
+        return (1.05 * data_std) * (pow(N, -0.2))
+
+
     # input the original points data, return the clustering points array
-    def clustering(self, points, band_with, dis_threshold):
+    def clustering(self, points, dis_threshold, band_width=None):
         # creating the shifting points to record next point after iteration
         shifting_points = np.array(points)
         points = np.array(points)
@@ -81,6 +93,10 @@ class MS_Direct(object):
         end_flag = [False] * points.shape[0]
         # record the iteratoring time
         iteration_times = 0
+
+        # if not setting the bandwidth, set the bandwidth by N
+        if band_width is None:
+            band_width = self.compute_bandwidth(points)
 
         while max_distance > dis_threshold:
             iteration_times += 1
@@ -93,7 +109,7 @@ class MS_Direct(object):
                 # the old point in shifting array
                 p_old = shifting_points[i]
                 # get the new point after one iteration
-                p_new = self.shift_point(p_old, points, band_with)
+                p_new = self.shift_point(p_old, points, band_width)
                 old_new_dist = self.cal_dist(p_new, p_old)
                 # cal the distance of old point and new point, compare it with threshold
                 # get the max distance in the shifting points
@@ -119,7 +135,7 @@ if __name__ == '__main__':
     np.savetxt("original_data.csv", original_data, delimiter=',')
 
     # get the result after the clustering
-    center_points = MS.clustering(points=original_data, band_with=1, dis_threshold=0.00001)
+    center_points = MS.clustering(points=original_data, dis_threshold=0.00001, band_width=None)
     if os.path.exists('res_data.csv'):
         os.remove('res_data.csv')
     np.savetxt("res_data.csv", center_points, delimiter=',')

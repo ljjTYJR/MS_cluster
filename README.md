@@ -73,13 +73,15 @@ d(\theta_1, \theta_2) =
 $$
 ​	The distance function can be written as :
 $$
-d(v_1,v_2)=(v_1 - v_2) = \sqrt{d^2(\theta_1 - \theta2) + (r_1 - r_2)^2}
+d(v_1,v_2)=(v_1 - v_2) = \sqrt{d^2(\theta_1 - \theta_2) + (r_1 - r_2)^2}
 $$
 ​	——where $v$ is the data point of $v = \left[\begin{matrix} \theta\\r \end{matrix}\right]$
 
 ​	The kernel function can choose the Gaussian kernel.
 
 #### Algorithm
+
+##### Mean Shift Process
 
 Assuming $S$ is the sampleing set, $T$ is the "clustering center" set. For a blurring process, letting $S = T$ and the expression:
 
@@ -103,6 +105,27 @@ For $p_i$ in T:
 		Else :
 			Continue
 
-### Todo List
+---
+
+##### Parameters
+
+The main parameter of the algorithm MS is the *bandwith* of the kernel function. If the *bandwidth* is too small, there may be a question that the points to be included are not enough. The result can be many clusters. But if the *bandwidth* is too large, this can result in only one cluster in the end.
+
+​	So, there is a trade-off when chossing the parameter. The probability density function $f(x)$ has two parateters : $N$ and $h$. If the size of the sample( $N$ )  is infinity( $N -> \infin$), h should approches zero ($h -> 0$). By this, we can get the relationship between $N$ and $h$ :
+$$
+h = cN^{-1/5}
+$$
+​	——where $c$ is a constant	
+
+​	For the gaussian distribution, $h$ is :
+$$
+\begin{align}
+h &= (\frac{4\sigma^5}{3N})^{1/5}\\
+&=\frac{1.05 * \sigma}{N^5}
+\end{align}
+$$
+​	——where $\sigma$ is the standard deviation for  the sample.
+
+### Todo List 
 
 - [ ] Modify the format of README to latex, especially algorithm expression.

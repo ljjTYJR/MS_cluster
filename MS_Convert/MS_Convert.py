@@ -5,6 +5,7 @@ The theta is the angle, and r is the radius
 """
 import shutil
 from sys import path
+import sys
 import numpy as np
 from numpy import genfromtxt
 import os
@@ -113,9 +114,83 @@ class MS_Convert(object):
                 shifting_points[i] = p_new
         return shifting_points
 
+    def find_clusters(self, shifting_points, cluster_distance):
+        """[summary]
+
+        Args:
+            shifting_points ([type]): [description]
+            cluster_distance ([type]): [description]
+
+        Returns:
+            [type]: [description]
+        """
+        shifting_points = shifting_points.tolist()
+        # size = len(shifting_points), cluster_record[i] = k means the ith element in data belongs to k cluster
+        cluster_record = []
+        # the element `group` in `groups` is the points belong to the same cluster
+        groups = []
+        # index to record the number of the clusters(group)
+        index_record = 0
+        # the ith element
+        i = 0
+
+        for p_tmp in shifting_points:
+            index = self._get_index_of_cluster(p_tmp, groups, cluster_distance)
+            if index is None:
+                # the p_tmp does not belong to any current group, so we need to make a new group
+                # append a new group which include the p_tmp
+                groups.append([p_tmp])
+                cluster_record.append(index_record)
+                # create a new index, so increase the index_record
+                index_record += 1
+            else:
+                # the p_tmp belongs to a existed group, add the p_tmp to the groups
+                groups[index].append(p_tmp)
+                cluster_record.append(index)
+            i += 1
+
+        return index_record, cluster_record, groups
+
+    def _get_index_of_cluster(self, point, groups, cluster_distance):
+        """find the index of cluster that include the point,
+           if point does not belong to, then return None
+
+        Args:
+            point : [the input point]
+            groups : [the point groups]
+
+        Returns: [the index of the cluster]
+        """
+        index_res = None
+        index_tmp = 0
+        for group in groups:
+            distance = self._get_distance_to_group(point, group)
+            if distance <= cluster_distance:
+                index_res = index_tmp
+                return index_res
+            index_tmp += 1
+
+        return index_res
+
+    def _get_distance_to_group(self, point, group):
+        """calculate the minium distance between the point and
+           the points in the group
+        Args:
+            point : [the input point]
+            group : [the points set of the group]
+
+        Returns: [minium distance between the point and the points in the group]
+        """
+        distance = sys.float_info.max
+        for p_tmp in group:
+            distance_tmp = self.cal_dist(point, p_tmp)
+            if distance_tmp < distance:
+                distance = distance_tmp
+        return distance
+
 
 if __name__ == '__main__' :
-
+    """
     MS = MS_Convert(data_path='../original_data/')
     # read original data
     original_data = MS.get_original_data()
@@ -154,6 +229,41 @@ if __name__ == '__main__' :
 
     # save the plot
     fig.savefig("res_plt")
+    """
+
+    # test for the data:
+    MS = MS_Convert(data_path='../data')
+    data = genfromtxt('res_data.csv', delimiter=',')
+    data = np.array(data)
+
+    ori_data = genfromtxt('processed_data.csv', delimiter=',')
+    ori_data = np.array(ori_data)
+
+    index_record, cluster_record, groups = MS.find_clusters(data, 0.1)
+    centroids = []
+    for group in groups:
+        # group = np.array(group)
+        centroids.append(np.mean(group, axis=0))
+    centroids = np.array(centroids)
+
+    # 画图：
+    fig = plt.figure()
+
+    picture = fig.add_subplot(111)
+    p_ori_x = ori_data[:,0]
+    p_ori_y = ori_data[:,1]
+    scatter_original = picture.scatter(p_ori_x,p_ori_y,s=5,c=cluster_record)
+
+    p_cen_x = centroids[:,0]
+    p_cen_y = centroids[:,1]
+    scatter_center = picture.scatter(p_cen_x,p_cen_y,s=10,c='r', marker='+')
+
+    picture.set_xlabel('x')
+    picture.set_ylabel('y')
+    plt.colorbar(scatter_original)
+
+    # save the plot
+    fig.savefig("res2_plt")
 
 
 
