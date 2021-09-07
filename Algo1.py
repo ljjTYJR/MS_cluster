@@ -44,3 +44,27 @@ class Algo1(object):
             diff = pointA[i] - pointB[i]
             res += diff ** 2
         return math.sqrt(res)
+
+    # calculate the mean and variance of the points in Euclidean space
+    def calculate_mean_point(self, points):
+        x_sum = float(0)
+        y_sum = float(0)
+        x_mean = float(0)
+        y_mean = float(0)
+        N = len(points)
+
+        for point in points:
+            x_sum += point[0]
+            y_sum += point[1]
+        x_mean = x_sum / N
+        y_mean = y_sum / N
+
+        mean_point = [x_mean, y_mean]
+
+        var_sum = float(0)
+        variance = float(0)
+        for point in points:
+            var_sum += (self.calculate_distance(point, mean_point)) ** 2
+        variance = var_sum / (N - 1)
+
+        return mean_point, variance

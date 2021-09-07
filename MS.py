@@ -63,11 +63,10 @@ class MeanShift(object):
      # compute the bandwidth if the `self.bandwidth` is None
     def _compute_bandwidth(self, points):
         N = len(points)
-        distances = []
-        for p_tmp in points:
-            distances.append(self.alg.calculate_distance(p_tmp, [0,0]))
+        # get the mean and variance the total points
+        _, var = self.alg.calculate_mean_point(points)
         # compute the standard standard deviation
-        data_std = np.std(np.array(distances), ddof=1)
+        data_std = math.sqrt(var)
         print("set bandwidth=",(1.05 * data_std) * (pow(N, -0.2)))
         return (1.05 * data_std) * (pow(N, -0.2))
 
@@ -97,65 +96,4 @@ class MeanShift(object):
             weight_tmp = (1 / (bandwidth * math.sqrt(2 * math.pi))) * math.exp(-0.5 * norm)
             weights.append(weight_tmp)
         return weights
-
-class DataProcess(object):
-    def __init__(self, data, cluster_distance):
-        self.data = data
-        self.cluster_distance = cluster_distance
-
-    # process the data, return the clusters
-    def data_process(self):
-        shifting_points = self.data.tolist()
-        # size = len(shifting_points), cluster_record[i] = k means the ith element in data belongs to k cluster
-        cluster_record = []
-        # the element `group` in `groups` is the points belong to the same cluster
-        groups = []
-        # index to record the number of the clusters(group)
-        index_record = 0
-        # the ith element
-        i = 0
-
-        for p_tmp in shifting_points:
-            index = self._get_index_of_cluster(p_tmp, groups, self.cluster_distance)
-            if index is None:
-                # the p_tmp does not belong to any current group, so we need to make a new group
-                # append a new group which include the p_tmp
-                groups.append([p_tmp])
-                cluster_record.append(index_record)
-                # create a new index, so increase the index_record
-                index_record += 1
-            else:
-                # the p_tmp belongs to a existed group, add the p_tmp to the groups
-                groups[index].append(p_tmp)
-                cluster_record.append(index)
-            i += 1
-
-        return index_record, cluster_record, groups
-
-    # find the index of cluster that include the point, if point does not belong to, then return None
-    def _get_index_of_cluster(self, point, groups, cluster_distance):
-        index_res = None
-        index_tmp = 0
-        for group in groups:
-            distance = self._get_distance_to_group(point, group)
-            if distance <= cluster_distance:
-                index_res = index_tmp
-                return index_res
-            index_tmp += 1
-
-        return index_res
-
-    # calculate the minium distance between the point and the points in the group
-    def _get_distance_to_group(self, point, group):
-        distance = sys.float_info.max
-        for p_tmp in group:
-            distance_tmp = self.alg.calculate_distance(point, p_tmp)
-            if distance_tmp < distance:
-                distance = distance_tmp
-        return distance
-
-
-if __name__ == '__main__':
-    MS = MeanShift(data_path='original_data/', algo_name='Algo1', bandwidth=None, threshold=0.0001)
-    MS.ms_process()
 
