@@ -11,9 +11,10 @@ import sys
 class MeanShift(object):
     def __init__(self, data_path, algo_name, bandwidth, threshold):
         self.data_path = data_path
-        if algo_name == 'Algo1':
+        self.algo_name = algo_name
+        if self.algo_name == 'Algo1':
             self.alg = Algo1()
-        elif algo_name == 'Algo2':
+        elif self.algo_name == 'Algo2':
             self.alg = Algo2()
         self.bandwidth = bandwidth
         self.threshold = threshold
@@ -25,6 +26,14 @@ class MeanShift(object):
         data = self.alg.get_data(self.data_path)
         original_points = np.array(data)
         shifting_points = np.array(data)
+        # we need to get the circular-linear raw data when plotting, so we need to return the raw data
+        # for `algo2`, theta_raw_points is just the original_points
+        # for `algo1`, original_points is the raw points with the format of (theta, r)
+        if self.algo_name == 'Algo1':
+            theta_raw_points = np.array(self.alg._get_original_data(self.data_path))
+        else :
+            theta_raw_points = np.array(data)
+
 
         # initialize a max_distance greater than threshold
         max_distance = self.threshold + 1
@@ -58,7 +67,7 @@ class MeanShift(object):
                 if old_new_distance < self.threshold:
                     end_flag[i] = True
                 shifting_points[i] = p_new
-        return original_points, shifting_points
+        return theta_raw_points, original_points, shifting_points
 
      # compute the bandwidth if the `self.bandwidth` is None
     def _compute_bandwidth(self, points):

@@ -64,6 +64,7 @@ class Algo2(object):
         variance = float(0)
         for point in points:
             var_sum += (self.calculate_distance(point, mean_point)) ** 2
+        print("N=", N)
         variance = var_sum / (N - 1)
 
         # return the table of mean and variance of the cluster

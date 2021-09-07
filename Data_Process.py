@@ -1,4 +1,5 @@
 import numpy
+from numpy.lib.function_base import select
 from Algo1 import Algo1
 from Algo2 import Algo2
 import numpy as np
@@ -6,9 +7,14 @@ import math
 import sys
 
 class DataProcess(object):
-    def __init__(self, data, cluster_distance):
+    def __init__(self, data, cluster_distance, algo_name):
         self.data = data
         self.cluster_distance = cluster_distance
+        if algo_name == 'Algo1':
+            self.alg = Algo1()
+        elif algo_name == 'Algo2':
+            self.alg = Algo2()
+
 
     # process the data, return the clusters
     def data_process(self):
@@ -85,7 +91,9 @@ class ResultProcess(object):
         # iterate the table to calculate the mean of each mean nad var of each cluster
         alg = Algo2()
         for index, group in point_table.items():
-            # notice the group's shape
+            # if the size of group is small, omit it
+            if len(group) < 2 :
+                continue
             mean_table[index], var_table[index] = alg.calculate_mean_point(group)
 
             """
