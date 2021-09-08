@@ -41,7 +41,7 @@ class MeanShift(object):
         end_flag = [False] * original_points.shape[0]
         # record the iteratoring time
         iteration_times = 0
-        # if not setting the bandwidth, set the bandwidth by N
+        # if not set the bandwidth, set the bandwidth by N
         if self.bandwidth is None:
             self.bandwidth = self._compute_bandwidth(original_points)
 
