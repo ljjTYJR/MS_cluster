@@ -13,8 +13,8 @@ if __name__ == '__main__':
     """
     data_path = 'data/data1.csv'
     algo_name = 'Algo1'
-    bandwidth = 0.9
-    threshold = 1
+    bandwidth = None
+    threshold = 0.00001
 
 
     MS = MeanShift(data_path = data_path, algo_name = algo_name, bandwidth = bandwidth, threshold = threshold)

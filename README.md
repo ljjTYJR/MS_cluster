@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository is a simple implemention for Mean Shift(MS) algorithm.
+This repository is a simple implemention for Mean Shift(MS) algorithm. **The basic idea of the algorithm I have did some recode in `/report/report.pdf` , so, please read `report.pdf` first!!!**
 
 ### The structure of the repository 
 
@@ -97,6 +97,10 @@ The main loop of the `run.py` is :
    is the centroid and variance of corresponding cluster.
 
 4. The result of points and clusters is shown in the file `data_alg_bandwidth_threshold.png` ， e.g: `data1_Algo1_None_1e-05.png`
+
+## Report
+
+In the report directory is my `Task Report`,  I explain my understanding of the algorithm. The report is `report.pdf`.
 
 ## Todo list
 
