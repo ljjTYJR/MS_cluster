@@ -26,7 +26,6 @@ class Visualize_Plot(object):
         self.picture.set_xlabel('theta')
         self.picture.set_ylabel('r')
         plt.colorbar(ori_scatter)
-        print("funck!!!")
         self.fig.savefig("cluster_res")
 
 

@@ -4,7 +4,7 @@ from Data_Process import ResultProcess
 from Visualize_Plot import Visualize_Plot
 
 if __name__ == '__main__':
-    data_path = 'original_data/'
+    data_path = 'data/data1.csv'
     algo_name = 'Algo2'
     bandwidth = None
     threshold = 0.00001
@@ -19,6 +19,10 @@ if __name__ == '__main__':
     RP = ResultProcess(cluster_record, theta_raw_points)
     mean_table, var_table = RP.compute_mean_var()
 
+    for i, val in mean_table.items():
+        print("index =", i, "centroid =", val)
+    for i, val in var_table.items():
+        print("index =", i, "variance of cluster =", val)
     mean_points = []
     for point in mean_table.values():
         mean_points.append(point)

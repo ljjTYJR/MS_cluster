@@ -11,15 +11,7 @@ class Algo2(object):
 
     # read and combine the csv file in `data_path`
     def _get_original_data(self, data_path):
-        if os.path.exists('Combine.csv') :
-            os.remove('Combine.csv')
-        files = os.listdir(data_path)
-        for file in files:
-            path = data_path + file
-            rf = open(path,'rb').read()
-            with open('Combine.csv', 'ab') as f:
-                f.write(rf)
-        original_data = np.genfromtxt('Combine.csv', delimiter=',')
+        original_data = np.genfromtxt(data_path, delimiter=',')
         print("get original data")
         return original_data
 
