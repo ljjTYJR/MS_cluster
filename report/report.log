@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.8)  8 SEP 2021 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.8)  8 SEP 2021 23:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -138,7 +138,14 @@ Package: lipsum 2021-08-01 v2.5 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count273
 \l__lipsum_a_int=\count274
 \l__lipsum_b_int=\count275
- (/usr/local/texlive/2021/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (/usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count276
+\float@exts=\toks22
+\float@box=\box53
+\@float@everytoks=\toks23
+\@floatcapt=\box54
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
@@ -151,8 +158,9 @@ Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \caption@hangindent=\dimen158
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count276
-\c@continuedfloat=\count277
+\c@caption@flags=\count277
+\c@continuedfloat=\count278
+Package caption Info: float package is loaded.
 Package caption Info: subfigure package is loaded.
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
@@ -175,14 +183,14 @@ If that doesn't work, type  X <return>  to quit.
 
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count278
+\c@AlgoLine=\count279
  (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip58
  (/usr/local/texlive/2021/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count279
+\c@checkoddpage=\count280
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
@@ -203,56 +211,75 @@ Package: relsize 2013/03/29 ver 4.1
 \interspacealgoruled=\dimen163
 \interspacetitleboxruled=\dimen164
 \algocf@ruledwidth=\skip67
-\algocf@inoutbox=\box53
-\algocf@inputbox=\box54
+\algocf@inoutbox=\box55
+\algocf@inputbox=\box56
 \AlCapSkip=\skip68
 \AlCapHSkip=\skip69
 \algoskipindent=\skip70
-\algocf@nlbox=\box55
-\algocf@hangingbox=\box56
-\algocf@untilbox=\box57
+\algocf@nlbox=\box57
+\algocf@hangingbox=\box58
+\algocf@untilbox=\box59
 \algocf@skipuntil=\skip71
-\algocf@capbox=\box58
+\algocf@capbox=\box60
 \algocf@lcaptionbox=\skip72
 \algoheightruledefault=\skip73
 \algoheightrule=\skip74
 \algotitleheightruledefault=\skip75
 \algotitleheightrule=\skip76
-\c@algocfline=\count280
-\c@algocfproc=\count281
-\c@algocf=\count282
-\algocf@algoframe=\box59
-\algocf@algobox=\box60
+\c@algocfline=\count281
+\c@algocfproc=\count282
+\c@algocf=\count283
+\algocf@algoframe=\box61
+\algocf@algobox=\box62
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count284
+\Gm@cntv=\count285
+\c@Gm@tempcnt=\count286
+\Gm@bindingoffset=\dimen165
+\Gm@wd@mp=\dimen166
+\Gm@odd@mp=\dimen167
+\Gm@even@mp=\dimen168
+\Gm@layoutwidth=\dimen169
+\Gm@layoutheight=\dimen170
+\Gm@layouthoffset=\dimen171
+\Gm@layoutvoffset=\dimen172
+\Gm@dimlist=\toks24
 ) (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
  (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count283
-\scratchdimen=\dimen165
-\scratchbox=\box61
-\nofMPsegments=\count284
-\nofMParguments=\count285
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count286
-\MPscratchDim=\dimen166
-\MPnumerator=\count287
-\makeMPintoPDFobject=\count288
-\everyMPtoPDFconversion=\toks23
+\scratchcounter=\count287
+\scratchdimen=\dimen173
+\scratchbox=\box63
+\nofMPsegments=\count288
+\nofMParguments=\count289
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count290
+\MPscratchDim=\dimen174
+\MPnumerator=\count291
+\makeMPintoPDFobject=\count292
+\everyMPtoPDFconversion=\toks26
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -262,191 +289,225 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(59.74988pt, 478.00812pt, 59.74988pt)
+* v-part:(T,H,B)=(67.60269pt, 676.04005pt, 101.4041pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=478.00812pt
+* \textheight=676.04005pt
+* \oddsidemargin=-12.52011pt
+* \evensidemargin=-12.52011pt
+* \topmargin=-41.6673pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: LaTeX Error: There's no line here to end.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.76 \end
+l.81 \end
          {algorithm}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: LaTeX Error: There's no line here to end.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.76 \end
+l.81 \end
          {algorithm}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: LaTeX Error: There's no line here to end.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.76 \end
+l.81 \end
          {algorithm}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: LaTeX Error: There's no line here to end.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.76 \end
+l.81 \end
          {algorithm}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: Missing $ inserted.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
 <inserted text> 
                 $
-l.76 \end
+l.81 \end
          {algorithm}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: LaTeX Error: There's no line here to end.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.76 \end
+l.81 \end
          {algorithm}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:76: LaTeX Error: There's no line here to end.
+/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.76 \end
+l.81 \end
          {algorithm}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -454,147 +515,70 @@ or  <return>  to continue without it.
 
 [1
 
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<0-23.jpg, id=24, 494.34688pt x 488.32437pt>
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<0-23.jpg, id=19, 494.34688pt x 488.32437pt>
 File: 0-23.jpg Graphic file (type jpg)
 <use 0-23.jpg>
-Package pdftex.def Info: 0-23.jpg  used on input line 142.
+Package pdftex.def Info: 0-23.jpg  used on input line 144.
 (pdftex.def)             Requested size: 170.71652pt x 168.636pt.
- [3 <./0-23.JPG>] [4]
-<line.JPG, id=36, 422.07687pt x 68.75688pt>
+ [2] [3 <./0-23.JPG>]
+<line.JPG, id=31, 422.07687pt x 68.75688pt>
 File: line.JPG Graphic file (type jpg)
 <use line.JPG>
-Package pdftex.def Info: line.JPG  used on input line 258.
-(pdftex.def)             Requested size: 276.00105pt x 44.96211pt.
-<line2.JPG, id=37, 405.01312pt x 47.17625pt>
+Package pdftex.def Info: line.JPG  used on input line 259.
+(pdftex.def)             Requested size: 382.40794pt x 62.29607pt.
+<line2.JPG, id=32, 405.01312pt x 47.17625pt>
 File: line2.JPG Graphic file (type jpg)
 <use line2.JPG>
-Package pdftex.def Info: line2.JPG  used on input line 258.
-(pdftex.def)             Requested size: 276.00105pt x 32.14923pt.
- [5] [6 <./line.JPG> <./line2.JPG>]
-<algo1.png, id=44, 555.0336pt x 459.1554pt>
+Package pdftex.def Info: line2.JPG  used on input line 259.
+(pdftex.def)             Requested size: 382.40794pt x 44.54434pt.
+
+Overfull \hbox (14.38106pt too wide) in paragraph at lines 267--267
+  \OT1/cmr/bx/n/10 Based on the \OT1/cmr/bx/it/10 Algo1\OT1/cmr/bx/n/10 , we can also con-vert the point to Carte-sian co-or-di-nate $\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x; y\OT1/cmr/m/n/10 ][] = [[](\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 )][]$\OT1/cmr/bx/n/10 .
+ []
+
+[4 <./line.JPG> <./line2.JPG>]
+<algo1.png, id=38, 555.0336pt x 459.1554pt>
 File: algo1.png Graphic file (type png)
 <use algo1.png>
 Package pdftex.def Info: algo1.png  used on input line 339.
 (pdftex.def)             Requested size: 312.9803pt x 258.91182pt.
-<algo2.png, id=46, 475.5366pt x 391.7034pt>
+ [5]
+<algo2.png, id=43, 475.5366pt x 391.7034pt>
 File: algo2.png Graphic file (type png)
 <use algo2.png>
-Package pdftex.def Info: algo2.png  used on input line 347.
+Package pdftex.def Info: algo2.png  used on input line 348.
 (pdftex.def)             Requested size: 312.9803pt x 257.80183pt.
- [7 <./algo1.png>]
-Overfull \hbox (60.02142pt too wide) in paragraph at lines 365--365
-\OT1/cmr/bx/n/10 Mean1, vari-ance1 = [6.264581278374883, 4.835123552413281], 0.939911335274201 
- []
-
-
-Overfull \hbox (71.52136pt too wide) in paragraph at lines 365--365
-\OT1/cmr/bx/n/10 Mean2, vari-ance2 = [3.260652115284019, 0.9951555487518141], 0.4847930143675687 
- []
-
-
-Overfull \hbox (65.7714pt too wide) in paragraph at lines 365--365
-\OT1/cmr/bx/n/10 Mean1, vari-ance1 = [6.195806779743288, 5.038739483173911], 1.0144883862305363 
- []
-
-
-Overfull \hbox (77.27133pt too wide) in paragraph at lines 365--365
-\OT1/cmr/bx/n/10 Mean2, vari-ance2 = [0.7578102016545607, 4.056523895407684], 0.43649180883735894 
- []
-
-
-Overfull \hbox (65.7714pt too wide) in paragraph at lines 365--365
-\OT1/cmr/bx/n/10 Mean2, vari-ance2 = [2.561818743211738, 3.4347695060328554], 1.345255056792747 
- []
-
-
-Overfull \hbox (65.7714pt too wide) in paragraph at lines 365--365
-\OT1/cmr/bx/n/10 Mean1, vari-ance1 = [6.275052766052679, 5.0138292362733345], 1.126485967720785 
- []
-
-
-Overfull \hbox (60.02142pt too wide) in paragraph at lines 365--365
-\OT1/cmr/bx/n/10 Mean2, vari-ance2 = [3.1462162642512377, 1.985775081232], 0.28859923244214547
- []
-
-
-Overfull \hbox (77.27133pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean1, vari-ance1 = [0.20222136352012238, 4.854327167542238], 0.6226003937141277 
- []
-
-
-Overfull \hbox (71.52136pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean2, vari-ance2 = [6.042231988296247, 5.349348037649856], 0.43750127152496493 
- []
-
-
-Overfull \hbox (77.27133pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean3, vari-ance3 = [3.2814843637511655, 1.1633712602153288], 1.4042334165883408 
- []
-
-
-Overfull \hbox (65.7714pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean1, vari-ance1 = [0.6241342718010923, 4.22775436941789], 0.7075564329703974 
- []
-
-
-Overfull \hbox (65.7714pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean2, vari-ance2 = [6.017494334803616, 5.172806610915254], 1.1435871536830982 
- []
-
-
-Overfull \hbox (65.7714pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean1, vari-ance1 = [1.8852498215398534, 4.291848884517322], 2.301119305564973 
- []
-
-
-Overfull \hbox (37.02155pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean2, vari-ance2 = [5.660576532243779, 4.90552073475], 1.923843711654354 
- []
-
-
-Overfull \hbox (71.52136pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean3, vari-ance3 = [3.1683116862320397, 1.7059184362171056], 0.537530802469436 
- []
-
-
-Overfull \hbox (54.27145pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean4, vari-ance4 = [5.82388720943778, 5.401409710333334], 4.150890959672452 
- []
-
-
-Overfull \hbox (60.02142pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean1, vari-ance1 = [3.138574735333872, 2.667478984917632], 3.954162764034368 
- []
-
-
-Overfull \hbox (77.27133pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean2, vari-ance2 = [6.0711038101168135, 5.9668292419135796], 0.3574547782738188 
- []
-
-
-Overfull \hbox (77.27133pt too wide) in paragraph at lines 385--385
-\OT1/cmr/bx/n/10 Mean3, vari-ance3 = [0.43445628507695205, 6.215840197777778], 0.6251928397153621
- []
-
-[8 <./algo2.png>] [9] (./report.aux)
+ [6 <./algo1.png> <./algo2.png>]
+<algo1_bandwidth.png, id=49, 462.528pt x 381.5856pt>
+File: algo1_bandwidth.png Graphic file (type png)
+<use algo1_bandwidth.png>
+Package pdftex.def Info: algo1_bandwidth.png  used on input line 397.
+(pdftex.def)             Requested size: 284.52756pt x 234.74652pt.
+ [7]
+<algo1_threshold.png, id=54, 479.391pt x 389.7762pt>
+File: algo1_threshold.png Graphic file (type png)
+<use algo1_threshold.png>
+Package pdftex.def Info: algo1_threshold.png  used on input line 408.
+(pdftex.def)             Requested size: 284.52756pt x 231.34578pt.
+ [8 <./algo1_bandwidth.png> <./algo1_threshold.png>] (./report.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 4833 strings out of 478599
- 81361 string characters out of 5854101
- 478305 words of memory out of 5000000
- 22667 multiletter control sequences out of 15000+600000
+ 5428 strings out of 478599
+ 90155 string characters out of 5854101
+ 494932 words of memory out of 5000000
+ 23245 multiletter control sequences out of 15000+600000
  412286 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,15n,81p,2190b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,15n,81p,2375b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on report.pdf (9 pages, 589463 bytes).
+Output written on report.pdf (8 pages, 760598 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
+ 143 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

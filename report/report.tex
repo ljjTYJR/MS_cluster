@@ -8,11 +8,16 @@
 % \usepackage{subfig}
 \usepackage{subfloat}
 \usepackage{lipsum}
+\usepackage{float}
 
 \usepackage[labelfont=it, textfont={bf,it}, font=small ]{caption}
 % \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[ruled, linesnumbered]{algorithm2e}
+\usepackage{geometry}
+
+\geometry{a4paper,scale=0.8}
+
 \begin{document}
 
 \maketitle
@@ -129,13 +134,10 @@ d(p_1, p_2) = \sqrt{({\theta_1 - \theta_2})^2 + ({r_1 - r_2})^2}
 
 \subparagraph{
 However, the variable $\theta$ is angle in $[0, 2 \pi]$, the angle is a kind of periodic value. That means the real distance between $0$ and $2\pi$ is $0$ , not $2\pi$. Similarly, the distance between $0$ and $\frac{3}{2} \pi$ is $\frac{1}{2} \pi$. As shown below:
-}
-
-\subparagraph{
-\begin{figure}[htb]
-\centering
-\includegraphics[width=6cm]{0-23}
-\caption{Point B represents $0$, point C represents $3\pi/2$, the real \textit{distance} between B and C is {$\pi$}/{2}}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6cm]{0-23}
+    \caption{Point B represents $0$, point C represents $3\pi/2$, the real \textit{distance} between B and C is {$\pi$}/{2}}
 \end{figure}
 }
 
@@ -235,25 +237,24 @@ However, the variable $\theta$ is angle in $[0, 2 \pi]$, the angle is a kind of 
 }
 \subparagraph{
     The simplest idea is $\bar{x} = \frac{1}{N} \sum_{i}^N{x_i}$. For $\theta$, it can be seen as a point on a unit circle. We can cut the circle and make it a line:
-}
-\subparagraph{
-\begin{figure}[ht]
-\begin{subfigure}
-  \centering
-  % include first image
-  \includegraphics[width=.8\linewidth]{line.JPG}
-  \caption{Cut from $\pi$}
-  \label{fig:sub-first}
-\end{subfigure}
-\begin{subfigure}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{line2.JPG}
-  \caption{Cut from $0$}
-  \label{fig:sub-second}
-\end{subfigure}
-\end{figure}
-}
+    \begin{figure}[H]
+        \begin{subfigure}
+          \centering
+          % include first image
+          \includegraphics[width=.8\linewidth]{line.JPG}
+          \caption{Cut from $\pi$}
+          \label{fig:sub-first}
+        \end{subfigure}
+        \begin{subfigure}
+          \centering
+          % include second image
+          \includegraphics[width=.8\linewidth]{line2.JPG}
+          \caption{Cut from $0$}
+          \label{fig:sub-second}
+        \end{subfigure}
+    \end{figure}
+    }
+
 
 \subparagraph{
 By choosing the point where to cut, we can also get different lines. So, the cutting point may have an effect on the out result.
@@ -324,25 +325,25 @@ Here, I set some basic parameters as the baseline:\\
 }
 
 \subparagraph{
-The results are shown as below:
+The results are shown as below,
 }
 
 \subparagraph{
-\begin{figure}[h]
-\centering
-\includegraphics[width=11cm]{algo1.png}
-\caption{The clustering results used algorithm1}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{algo1.png}
+    \caption{The clustering results used algorithm1}
 \end{figure}
 }
-
 
 \subparagraph{
-\begin{figure}[h]
-\centering
-\includegraphics[width=11cm]{algo2.png}
-\caption{The clustering results used algorithm2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{algo2.png}
+    \caption{The clustering results used algorithm2}
 \end{figure}
 }
+
 
 \subparagraph{
 The corresponding parameters are:
@@ -381,5 +382,27 @@ Mean1, variance1 = [3.138574735333872, 2.667478984917632], 3.954162764034368\\
 Mean2, variance2 = [6.0711038101168135, 5.9668292419135796], 0.3574547782738188\\
 Mean3, variance3 = [0.43445628507695205, 6.215840197777778], 0.6251928397153621
 }
+
+\subsection{Parameters effects}
+\paragraph{
+    Use data1 as the sampled set, Algo1 as the algorithm, threshold = 0.0001;
+    The results with different bandwidth are shown below:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=10cm]{algo1_bandwidth.png}
+        \caption{Different bandwidth}
+    \end{figure}
+}
+
+\subparagraph{
+    Use data1 as the sampled set, Algo1 as the algorithm, bandwidth = 0.9;
+    The results with different threshold are shown below:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=10cm]{algo1_threshold.png}
+        \caption{Different bandwidth}
+    \end{figure}
+}
+
 
 \end{document}

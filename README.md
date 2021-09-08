@@ -96,7 +96,7 @@ The main loop of the `run.py` is :
 
    is the centroid and variance of corresponding cluster.
 
-4. The result of points and clusters is shown in the file `cluster_res.png`
+4. The result of points and clusters is shown in the file `data_alg_bandwidth_threshold.png` ， e.g: `data1_Algo1_None_1e-05.png`
 
 ## Todo list
 

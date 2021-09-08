@@ -13,8 +13,8 @@ if __name__ == '__main__':
     """
     data_path = 'data/data1.csv'
     algo_name = 'Algo1'
-    bandwidth = None
-    threshold = 0.00001
+    bandwidth = 0.9
+    threshold = 1
 
 
     MS = MeanShift(data_path = data_path, algo_name = algo_name, bandwidth = bandwidth, threshold = threshold)
@@ -52,6 +52,6 @@ if __name__ == '__main__':
     mean_points = []
     for point in mean_table.values():
         mean_points.append(point)
-    VP = Visualize_Plot(theta_raw_points, cluster_record, mean_points)
+    VP = Visualize_Plot(theta_raw_points, cluster_record, mean_points, data_path, algo_name, bandwidth, threshold)
     VP.plot_ori_cluster_points()
 

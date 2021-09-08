@@ -3,12 +3,17 @@ import numpy as np
 from numpy.core.fromnumeric import mean
 
 class Visualize_Plot(object):
-    def __init__(self, original_points, cluster_class, mean_points):
+    def __init__(self, original_points, cluster_class, mean_points, data_path, algo_name, bandwidth, threshold):
         self.fig = plt.figure()
         self.picture = self.fig.add_subplot(111)
         self.original_points = original_points
         self.cluster_class = cluster_class
         self.mean_points = np.array(mean_points)
+        # used to save the parameter to save the figure
+        self.data_path = data_path
+        self.algo_name = algo_name
+        self.bandwidth = bandwidth
+        self.threshold = threshold
         return
 
     # plot the original data
@@ -26,7 +31,13 @@ class Visualize_Plot(object):
         self.picture.set_xlabel('theta')
         self.picture.set_ylabel('r')
         plt.colorbar(ori_scatter)
-        self.fig.savefig("cluster_res")
+
+        # delete dir and .csv in the string of data_path
+        self.data_path = self.data_path.replace('data/','')
+        self.data_path = self.data_path.replace('.csv','')
+
+        res_path = self.data_path + '_' + self.algo_name + '_' + str(self.bandwidth) + '_' +str(self.threshold)
+        self.fig.savefig(res_path + '.png')
 
 
 
