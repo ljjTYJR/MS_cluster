@@ -1,4 +1,3 @@
-*.png
-test.py
-*.csv
+# *.png
+# *.csv
 __pycache__/
