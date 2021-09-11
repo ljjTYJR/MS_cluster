@@ -30,6 +30,7 @@ class Visualize_Plot(object):
 
         self.picture.set_xlabel('theta')
         self.picture.set_ylabel('r')
+        self.picture.legend((ori_scatter, cluster_scatter), ('original_points', 'cluster_points'), loc = 0)
         plt.colorbar(ori_scatter)
 
         # delete dir and .csv in the string of data_path
