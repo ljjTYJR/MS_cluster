@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1631116652 "/home/sunshuo/Github/clust/clustering/report/report.tex" "report.pdf" "report" 1631116652
-  "/home/sunshuo/Github/clust/clustering/report/report.tex" 1631116650 14303 709e29675c56f549cdf36f04b1684db1 ""
+["pdflatex"] 1631352628 "/home/sunshuo/Github/clust/clustering/report/resources/report.tex" "report.pdf" "report" 1631352629
+  "/home/sunshuo/Github/clust/clustering/report/resources/report.tex" 1631352628 15258 8d3f57780d7c35f606b05a85cf557dfd ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -61,7 +61,6 @@
   "/usr/local/texlive/2021/texmf-dist/tex/latex/base/size10.clo" 1622581934 8448 05e1c6a8fc5db344ed9d7aeb299acbce ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty" 1603745920 51746 e89c4da670ba533e6ab38e045ce6d1d9 ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty" 1603745920 67929 d50ae850e1d9604065e8337a75a41029 ""
-  "/usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty" 1603745920 6133 46bea384e36e9b74bd53a238fc2d0654 ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/local/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
@@ -94,9 +93,9 @@
   "algo2.png" 1631111791 139639 6201e34d032d70fdf8fe77e062f13858 ""
   "line.JPG" 1631111792 12665 b53b67ddffce50c5d7d60eefbe2776f0 ""
   "line2.JPG" 1631111794 11696 62e2664040f4a37925dfb7910408d0cf ""
-  "report.aux" 1631116652 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "report.tex" 1631116650 14303 709e29675c56f549cdf36f04b1684db1 ""
+  "report.aux" 1631352629 21705 bd6774f550b94d7a0d33eef1da79067c "pdflatex"
+  "report.tex" 1631352628 15258 8d3f57780d7c35f606b05a85cf557dfd ""
   (generated)
+  "report.pdf"
   "report.log"
   "report.aux"
-  "report.pdf"

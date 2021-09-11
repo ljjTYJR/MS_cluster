@@ -12,9 +12,30 @@
 
 \usepackage[labelfont=it, textfont={bf,it}, font=small ]{caption}
 % \usepackage{caption}
-\usepackage{subcaption}
+% \usepackage{subcaption}
 \usepackage[ruled, linesnumbered]{algorithm2e}
 \usepackage{geometry}
+
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+   \begin{center}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+     \renewcommand{\caption}[2][\relax]{% Make a new \caption
+       {\raggedright\textbf{\ALG@name~\thealgorithm} ##2\par}%
+       \ifx\relax##1\relax % #1 is \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+       \else % #1 is not \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+       \fi
+       \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+   \end{center}
+  }
+\makeatother
 
 \geometry{a4paper,scale=0.8}
 
@@ -27,8 +48,9 @@
 The Mean Shift(MS) algorithm is a kind of clustering algorithm based on density estimation. Given discretely sampled data, the MS algorithm aims to locate the maxima of the density function. To estimate the density function, one simple approach is to smooth the data, for example:
 }
 \begin{equation}
-f(x) = \sum_{i=1}^{N}K(\frac{x-x_i}{h})
+f(x) = \sum_{i=1}^{N}K(\frac{x-x_{i}}{h})
 \end{equation}
+
 \subparagraph{
 where function K(x) is called the \textit{kernel function} if there exists a profile such that:
 }
@@ -58,31 +80,33 @@ where $S'$ is the a finite set(sample); $w(s)$ is the weight function.
 \subparagraph{
 Let $T \subset  X$ is a finite set, and we use the MS algorithm iteratively  $T \leftarrow m(T)$ until converging.  If the set $T = S$, we call it a blurring process.
 }
-\subparagraph{
-Based on the above information, we can simply summarise the process of the Mean Shift algorithm:
-}
 
-\begin{algorithm}[t]
-\caption{Mean Shift}
-\KwIn{sample set: $S'$, point set: $T$, bandwidth: $h$, threshold: $\epsilon$}
-\KwResult{shifting\_points set: $T'$}
-i = 0\\
-\For{$p_i$ in $T'$}{
-    $p_{shift}$ \leftarrow $p_i$, $d$ \leftarrow \epsilon+\delta(\delta>0)\; \\
-    \While{$d$ \le $\epsilon$}{
-        $p_{old}$ \leftarrow $p_{shift}$\;\\
-        $p_{new}$ \leftarrow GetNewPoint$(p_{old}, T)$\;\\
-        $d$ \leftarrow $d(p_{old}, p_{new})$\;\\
-        $p_{shift}$ \leftarrow $p_{new}$
-    }
-    $T'[i]$ = $p_{shift}$\;\\
-    i += 1\;\\
+\subparagraph{
+    Based on the above information, we can simply summarise the process of the Mean Shift algorithm:
 }
+\clearpage
+
+\begin{algorithm}[hb]
+    \caption{Mean Shift}
+    \KwIn{sample set: $S'$, point set: $T$, bandwidth: $h$, threshold: $\epsilon$}
+    \KwResult{shifting\_points set: $T'$}
+    i = 0\\
+    \For{$p_i$ in $T'$}{
+        $p_{shift}$ $\leftarrow$ $p_i$,
+        $d$ $\leftarrow$ $\epsilon + \delta $, $ \delta > 0 $ \\
+        \While{$d$ $\le$ $\epsilon$}{
+            $p_{old}$ $\leftarrow$ $p_{shift}$\\
+            $p_{new}$ $\leftarrow$ GetNewPoint$(p_{old}, T)$\\
+            $d$ $\leftarrow$ $d(p_{old}, p_{new})$\\
+            $p_{shift}$ $\leftarrow$ $p_{new}$
+        }
+        $T'[i]$ = $p_{shift}$\\
+        i += 1\\
+    }
 \end{algorithm}
 
-
 \subparagraph{
-In this task, I give two different ways for the Mean-Shift algorithm to process circular-linear data. The difference between the two ways is how to compute the evaluate the distance between two points with $(\theta, r)$ format. The first one (Algo1) converts the point in polar coordinate to Cartesian coordinate. The second one (Algo2) directly computes the distance between two points like Euclidean space.
+In this task, I give two different ways for the Mean-Shift algorithm to process circular-linear data. The difference between the two ways is how to compute and evaluate the distance between two points with $(\theta, r)$ format. The first one (Algo1) converts the point in polar coordinate to Cartesian coordinate. The second one (Algo2) directly computes the distance between two points like Euclidean space.
 }
 
 %---------------------------------- section 2 ------------------------------------------------%
@@ -101,7 +125,7 @@ In the above equation, $(x-x_i)$ is used to describe the \textit{distance} betwe
 
 \subsubsection{Algo1}
 \paragraph{
-The data given is circular-linear data, with the format$(\theta, r)$. The variable $\theta$ represents direction, and the variable $r$ represents the size in the direction. It is an intuitive idea that we can convert a vector in polar coordinate to a point in Cartesian coordinate:
+The data given is circular-linear data, with the format$(\theta, r)$. The variable $\theta$ represents direction, and the variable $r$ represents the size in this direction. It is an intuitive idea that we can convert a vector in polar coordinate to a point in Cartesian coordinate:
 }
 
 \begin{equation}
@@ -183,7 +207,7 @@ However, the variable $\theta$ is angle in $[0, 2 \pi]$, the angle is a kind of 
 \begin{equation}
 \begin{aligned}
     h &= (\frac{4\sigma^5}{3N})^{1/5}
-&=\frac{1.05 * \sigma}{N^5}
+&=1.05 * \sigma * N^{-0.2}
 \end{aligned}
 \end{equation}
 \subparagraph{where $\sigma$ is the standard deviation for the sample.}
@@ -209,7 +233,7 @@ However, the variable $\theta$ is angle in $[0, 2 \pi]$, the angle is a kind of 
 \subparagraph{
     The kernel function can be seen as the weight to estimate the point around $x$.
     The \textit{flat kernel} can be seen as a d-dimensional sphere, only the point in this sphere will be considered.
-    The \textit{Gaussian kernel} consider all the points in the set, but closer points will have larger point.
+    The \textit{Gaussian kernel} consider all the points in the set, but closer points will have larger weight.
 }
 \subparagraph{
     In this task, we will use the \textit{Gaussian kernel} as the kernel function.
@@ -257,11 +281,11 @@ However, the variable $\theta$ is angle in $[0, 2 \pi]$, the angle is a kind of 
 
 
 \subparagraph{
-By choosing the point where to cut, we can also get different lines. So, the cutting point may have an effect on the out result.
+By choosing the point where to cut, we can also get different lines. So, the cutting point may have an effect on the result.
 }
 
 \subparagraph{
-Based on the \textit{Algo1}, we can also convert the point to Cartesian coordinate $[x,y]^T = [\cos(\theta), \sin(\theta)]^T$. So we can compute the mean value of each axis separately by :
+Simliar to the idea of \textit{Algo1}, we can also convert the point on the unit circle to Cartesian coordinate : $[x,y]^T = [\cos(\theta), \sin(\theta)]^T$. So we can compute the mean value of each axis separately by :
 }
 
 \begin{equation}
@@ -272,7 +296,7 @@ Based on the \textit{Algo1}, we can also convert the point to Cartesian coordina
 \end{equation}
 
 \subparagraph{
-So, we can get the centre of the cluster, for its $\theta_c$ variable, it has the format:
+Assuming the mean value of the $\theta$ is $\theta_{c}$, it has the property:
 }
 
 \begin{equation}
@@ -283,7 +307,7 @@ So, we can get the centre of the cluster, for its $\theta_c$ variable, it has th
 \end{equation}
 
 \subparagraph{
-Back to the $\theta$:
+Converting it back to the $\theta$:
 }
 
 \begin{equation}
@@ -295,7 +319,7 @@ Back to the $\theta$:
 \end{equation}
 
 \subparagraph{
-For the radius $r$, we can just compute it by :
+For the radius $r$, we can just compute it by :\\
 }
 
 \begin{equation}
@@ -313,6 +337,10 @@ Variance is a measure of dispersion, based on the meaning of distance of two cir
             &=\frac{1}{N-1}\sum_{i=1}^{N}d(p_i, p_c)^2
     \end{aligned}
 \end{equation}
+
+\subparagraph{
+    Where $d$ is the equation(9).
+}
 
 %--------------------section 4-----------------------------------%
 \section{Conclusion}

@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This repository is a simple implemention for Mean Shift(MS) algorithm. **The basic idea of the algorithm I have did some recode in `/report/report.pdf` , so, please read `report.pdf` first!!!**
+This repository is a simple implemention for Mean Shift(MS) algorithm. **The basic idea of the algorithm I have did some record in `/report/report.pdf` , so, please read `report.pdf` first!!!**
 
-### The structure of the repository 
+### The structure of the repository
 
 ```
 ├── Algo1.py
@@ -42,13 +42,13 @@ run.py			—— main function to run the algorithm
 
 ## How to run
 
-The `main` function is defined in the file `run.py`. 
+The `main` function is defined in the file `run.py`.
 
 The main loop of the `run.py` is :
 
-1. Decide what parameters to use, the parameters include : 
+1. Decide what parameters to use, the parameters include :
 
-   1. data_path : the path of the data, e.g : `data/data1.csv` 
+   1. data_path : the path of the data, e.g : `data/data1.csv`
 
    2. algo_name : to use `Algo1` or `Algo2`, e.g : `Algo1`
 
@@ -56,7 +56,7 @@ The main loop of the `run.py` is :
 
    4. threshold : the threshold of the mean shift, e.g : `0.00001`
 
-2. By command `python3 run.py` 
+2. By command `python3 run.py`
 
 3. The log can be shown as :
 
@@ -85,7 +85,7 @@ The main loop of the `run.py` is :
    index = 1 variance of cluster = 0.4847930143675687
    ```
 
-   The last output : 
+   The last output :
 
    ```
    index = 0 centroid = [6.264581278374883, 4.835123552413281]
