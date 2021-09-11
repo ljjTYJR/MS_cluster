@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.8)  8 SEP 2021 23:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.9.8)  11 SEP 2021 17:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/sunshuo/Github/clust/clustering/report/report.tex
-(/home/sunshuo/Github/clust/clustering/report/report.tex
+**/home/sunshuo/Github/clust/clustering/report/resources/report.tex
+(/home/sunshuo/Github/clust/clustering/report/resources/report.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-08-27> (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
@@ -162,25 +162,6 @@ Package caption Info: Standard document class detected.
 \c@continuedfloat=\count278
 Package caption Info: float package is loaded.
 Package caption Info: subfigure package is loaded.
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-
-
-/usr/local/texlive/2021/texmf-dist/tex/latex/caption/subcaption.sty:62: Package subcaption Error: This package can't be used in cooperation
-(subcaption)                with the subfigure package.
-
-See the subcaption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.62 \subcaption@CheckCompatibility
-                                   
-If you do not understand this error, please take a closer look
-at the documentation of the `subcaption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
 \c@AlgoLine=\count279
@@ -253,20 +234,20 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 ) (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
  (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count287
@@ -323,259 +304,62 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81 \end
-         {algorithm}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81 \end
-         {algorithm}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81 \end
-         {algorithm}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81 \end
-         {algorithm}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: Missing $ inserted.
-<inserted text> 
-                $
-l.81 \end
-         {algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81 \end
-         {algorithm}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-/home/sunshuo/Github/clust/clustering/report/report.tex:81: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81 \end
-         {algorithm}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 [1
 
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<0-23.jpg, id=19, 494.34688pt x 488.32437pt>
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+]
+<0-23.jpg, id=24, 494.34688pt x 488.32437pt>
 File: 0-23.jpg Graphic file (type jpg)
 <use 0-23.jpg>
-Package pdftex.def Info: 0-23.jpg  used on input line 144.
+Package pdftex.def Info: 0-23.jpg  used on input line 168.
 (pdftex.def)             Requested size: 170.71652pt x 168.636pt.
- [2] [3 <./0-23.JPG>]
+ [3 <./0-23.JPG>]
 <line.JPG, id=31, 422.07687pt x 68.75688pt>
 File: line.JPG Graphic file (type jpg)
 <use line.JPG>
-Package pdftex.def Info: line.JPG  used on input line 259.
+Package pdftex.def Info: line.JPG  used on input line 283.
 (pdftex.def)             Requested size: 382.40794pt x 62.29607pt.
 <line2.JPG, id=32, 405.01312pt x 47.17625pt>
 File: line2.JPG Graphic file (type jpg)
 <use line2.JPG>
-Package pdftex.def Info: line2.JPG  used on input line 259.
+Package pdftex.def Info: line2.JPG  used on input line 283.
 (pdftex.def)             Requested size: 382.40794pt x 44.54434pt.
-
-Overfull \hbox (14.38106pt too wide) in paragraph at lines 267--267
-  \OT1/cmr/bx/n/10 Based on the \OT1/cmr/bx/it/10 Algo1\OT1/cmr/bx/n/10 , we can also con-vert the point to Carte-sian co-or-di-nate $\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x; y\OT1/cmr/m/n/10 ][] = [[](\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 )][]$\OT1/cmr/bx/n/10 .
- []
-
-[4 <./line.JPG> <./line2.JPG>]
+ [4 <./line.JPG> <./line2.JPG>]
 <algo1.png, id=38, 555.0336pt x 459.1554pt>
 File: algo1.png Graphic file (type png)
 <use algo1.png>
-Package pdftex.def Info: algo1.png  used on input line 339.
+Package pdftex.def Info: algo1.png  used on input line 367.
 (pdftex.def)             Requested size: 312.9803pt x 258.91182pt.
  [5]
 <algo2.png, id=43, 475.5366pt x 391.7034pt>
 File: algo2.png Graphic file (type png)
 <use algo2.png>
-Package pdftex.def Info: algo2.png  used on input line 348.
+Package pdftex.def Info: algo2.png  used on input line 376.
 (pdftex.def)             Requested size: 312.9803pt x 257.80183pt.
  [6 <./algo1.png> <./algo2.png>]
 <algo1_bandwidth.png, id=49, 462.528pt x 381.5856pt>
 File: algo1_bandwidth.png Graphic file (type png)
 <use algo1_bandwidth.png>
-Package pdftex.def Info: algo1_bandwidth.png  used on input line 397.
+Package pdftex.def Info: algo1_bandwidth.png  used on input line 425.
 (pdftex.def)             Requested size: 284.52756pt x 234.74652pt.
  [7]
 <algo1_threshold.png, id=54, 479.391pt x 389.7762pt>
 File: algo1_threshold.png Graphic file (type png)
 <use algo1_threshold.png>
-Package pdftex.def Info: algo1_threshold.png  used on input line 408.
+Package pdftex.def Info: algo1_threshold.png  used on input line 436.
 (pdftex.def)             Requested size: 284.52756pt x 231.34578pt.
- [8 <./algo1_bandwidth.png> <./algo1_threshold.png>] (./report.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ [8 <./algo1_bandwidth.png> <./algo1_threshold.png>] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 5428 strings out of 478599
- 90155 string characters out of 5854101
- 494932 words of memory out of 5000000
- 23245 multiletter control sequences out of 15000+600000
+ 5420 strings out of 478599
+ 89897 string characters out of 5854101
+ 495760 words of memory out of 5000000
+ 23239 multiletter control sequences out of 15000+600000
  412286 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,15n,81p,2375b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,15n,81p,2385b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on report.pdf (8 pages, 760598 bytes).
+Output written on report.pdf (8 pages, 761051 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream
