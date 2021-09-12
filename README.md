@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository is a simple implemention for Mean Shift(MS) algorithm. **The basic idea of the algorithm I have did some record in `/report/report.pdf` , so, please read `report.pdf` first!!!**
+This repository is a simple implementation for Mean Shift(MS) algorithm. **The basic idea of the algorithm I have done some records in `/report/report.pdf`. So, please read `report.pdf` first!!!**
 
 ### The structure of the repository
 
@@ -24,17 +24,17 @@ Directories here include :
 
 ```log
 data/			—— The input original data(csv file)
-Referencr/		—— The reference paper
+Reference/		—— The reference paper
 report/			—— My report resources
-res/			—— the result of different data set / algorithms
+res/			—— the result of different data set/algorithms
 ```
 
 The python file :
 
 ```
-Algo1.py		—— The implemention of Algo1
-Algo2.py		—— The implemention of Algo2
-Mean_Shift.py	—— The process of Mean Shift algorithm
+Algo1.py		—— The implementation of Algo1
+Algo2.py		—— The implementation of Algo2
+Mean_Shift.py	—— The process of the Mean Shift algorithm
 Data_Process.py	—— The data processing methods
 Visualize_Plot.py —— The data visualization methods
 run.py			—— main function to run the algorithm
@@ -46,15 +46,15 @@ The `main` function is defined in the file `run.py`.
 
 The main loop of the `run.py` is :
 
-1. Decide what parameters to use, the parameters include :
+1. Decide what parameters to use. The parameters include :
 
-   1. data_path : the path of the data, e.g : `data/data1.csv`
+   1. data_path: the path of the data, e.g: `data/data1.csv`
 
-   2. algo_name : to use `Algo1` or `Algo2`, e.g : `Algo1`
+   2. algo_name: to use `Algo1` or `Algo2`, e.g: `Algo1`
 
-   3. bandwidth : the bandwith of kernel function. (If it is set `None`, it means it will compute bandwidth by N).
+   3. bandwidth: the bandwidth of kernel function. (If it `None` is set, it means it will compute bandwidth by N).
 
-   4. threshold : the threshold of the mean shift, e.g : `0.00001`
+   4. threshold: the threshold of the mean shift, e.g: `0.00001`
 
 2. By command `python3 run.py`
 
@@ -94,7 +94,7 @@ The main loop of the `run.py` is :
    index = 1 variance of cluster = 0.4847930143675687
    ```
 
-   is the centroid and variance of corresponding cluster.
+   are the centroid and variance of the corresponding cluster.
 
 4. The result of points and clusters is shown in the file `data_alg_bandwidth_threshold.png` ， e.g: `data1_Algo1_None_1e-05.png`
 

@@ -1,7 +1,7 @@
 \relax 
 \providecommand \oddpage@label [2]{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{ The Mean Shift(MS) algorithm is a kind of clustering algorithm based on density estimation. Given discretely sampled data, the MS algorithm aims to locate the maxima of the density function. To estimate the density function, one simple approach is to smooth the data, for example: }{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ The Mean Shift(MS) algorithm is a kind of clustering algorithm based on density estimation. If given discretely sampled data, the MS algorithm aims to locate the maxima of the density function. A simple approach to estimate the density function is to smooth the data, for example: }{1}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{ where function K(x) is called the \textit  {kernel function} if there exists a profile such that: }{1}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{ the $k(x)$ should have the property:\\ 1) $k$ in non-negative\\ 2) $k$ is non-increasing: $k(a) \geq k(b)$ if $a < b$\\ 3) $k$ is piece-wise continuous and $\DOTSI \intop \ilimits@ _{0}^{\infty }k(r)d(r) < \infty $ }{1}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{ The sample mean with kernel K at $x \in X$ can be written as : }{1}{}\protected@file@percent }
@@ -33,15 +33,15 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Kernel Function}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{ The common kernel function used is \textit  {flat kernel} : }{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{and \textit  {Gaussian kernel}:}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{ The kernel function can be seen as the weight to estimate the point around $x$. The \textit  {flat kernel} can be seen as a d-dimensional sphere, only the point in this sphere will be considered. The \textit  {Gaussian kernel} consider all the points in the set, but closer points will have larger weight. }{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{ The kernel function can be seen as the weight to estimate the point around $x$. The \textit  {flat kernel} can be seen as a d-dimensional sphere, and only the point in this sphere will be considered. The \textit  {Gaussian kernel} considers all the points in the set, but closer points will have larger weight. }{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{ In this task, we will use the \textit  {Gaussian kernel} as the kernel function. }{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Weight Function}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{ Weight function $w(s)$ can be fixed or re-evaluated after each iteration. In this task, the Gaussian kernel has already set the weight for each point, so I just set $w(s) = 1$ in the iteration. }{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Threshold}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{ The parameter threshold is used to decide when to stop the iteration. The larger threshold will result in more clusters. But smaller thresholds may result in that there is only one mode in the set. In this task, we will set different threshold and analyse the results. }{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ The parameter threshold is used to decide when to stop the iteration. The larger threshold will result in more clusters. But smaller thresholds may result in that there is only one mode in the set. In this task, we will set different thresholds and analyze the results. }{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Data Analysis}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Computing Means}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{ After the iteration of Mean Shift algorithm, we can get different modes of data. To estimate the basic parameters of different modes, we need to find the centre of each cluster by computing the mean point of each cluster. }{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ After the iteration of Mean Shift algorithm, we can get different modes of data. To estimate the basic parameters of different modes, we need to find the center of each cluster by computing the mean point of each cluster. }{4}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Cut from $\pi $\relax }}{4}{}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:sub-first}{{2}{4}}
@@ -54,7 +54,7 @@
 \@writefile{toc}{\contentsline {subparagraph}{ Converting it back to the $\theta $: }{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{ For the radius $r$, we can just compute it by :\\ }{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Computing Variance}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{ Variance is a measure of dispersion, based on the meaning of distance of two circular-linear points, we compute the variance in the distance space: }{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{ Variance is a measure of dispersion. Based on the meaning of distance of two circular-linear points, we compute the variance in the distance space: }{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subparagraph}{ Where $d$ is the equation(9). }{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Clustering results of given data}{5}{}\protected@file@percent }

@@ -45,7 +45,7 @@
 
 \section{Introduction}
 \paragraph{
-The Mean Shift(MS) algorithm is a kind of clustering algorithm based on density estimation. Given discretely sampled data, the MS algorithm aims to locate the maxima of the density function. To estimate the density function, one simple approach is to smooth the data, for example:
+The Mean Shift(MS) algorithm is a kind of clustering algorithm based on density estimation. If given discretely sampled data, the MS algorithm aims to locate the maxima of the density function. A simple approach to estimate the density function is to smooth the data, for example:
 }
 \begin{equation}
 f(x) = \sum_{i=1}^{N}K(\frac{x-x_{i}}{h})
@@ -232,8 +232,8 @@ However, the variable $\theta$ is angle in $[0, 2 \pi]$, the angle is a kind of 
 
 \subparagraph{
     The kernel function can be seen as the weight to estimate the point around $x$.
-    The \textit{flat kernel} can be seen as a d-dimensional sphere, only the point in this sphere will be considered.
-    The \textit{Gaussian kernel} consider all the points in the set, but closer points will have larger weight.
+    The \textit{flat kernel} can be seen as a d-dimensional sphere, and only the point in this sphere will be considered.
+    The \textit{Gaussian kernel} considers all the points in the set, but closer points will have larger weight.
 }
 \subparagraph{
     In this task, we will use the \textit{Gaussian kernel} as the kernel function.
@@ -248,7 +248,7 @@ However, the variable $\theta$ is angle in $[0, 2 \pi]$, the angle is a kind of 
 \subsubsection{Threshold}
 \paragraph{
     The parameter threshold is used to decide when to stop the iteration. The larger threshold will result in more clusters. But smaller thresholds may result in
-    that there is only one mode in the set. In this task, we will set different threshold and analyse the results.
+    that there is only one mode in the set. In this task, we will set different thresholds and analyze the results.
 }
 
 %-------------------------section 3----------------------------%
@@ -257,7 +257,7 @@ However, the variable $\theta$ is angle in $[0, 2 \pi]$, the angle is a kind of 
 \subsection{Computing Means}
 \paragraph{
     After the iteration of Mean Shift algorithm, we can get different modes of data. To estimate the basic parameters of different modes,
-    we need to find the centre of each cluster by computing the mean point of each cluster.
+    we need to find the center of each cluster by computing the mean point of each cluster.
 }
 \subparagraph{
     The simplest idea is $\bar{x} = \frac{1}{N} \sum_{i}^N{x_i}$. For $\theta$, it can be seen as a point on a unit circle. We can cut the circle and make it a line:
@@ -329,7 +329,7 @@ For the radius $r$, we can just compute it by :\\
 %----------section 3.2
 \subsection{Computing Variance}
 \subparagraph{
-Variance is a measure of dispersion, based on the meaning of distance of two circular-linear points, we compute the variance in the distance space:
+Variance is a measure of dispersion. Based on the meaning of distance of two circular-linear points, we compute the variance in the distance space:
 }
 \begin{equation}
     \begin{aligned}
